@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web 1.0 Style Website</title>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#00FF00" vlink="#00FF00" alink="#FF0000">
+    <!-- Audio Element -->
+    <audio id="background-music" autoplay loop>
+        <source src="audio/INTERSLAVIC SLAVBASS - MEDŽUSLOVJANSKY SLAVBASS - МЕДЖУСЛОВЈАНСКЫ СЛАВБАСС.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <table border="1" width="800" align="center" cellpadding="10" bgcolor="#333333">
+        <tr>
+            <td>
+                <h1 align="center"><font color="#00FF00">Welcome to My Web 1.0 Style Website</font></h1>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <img src="https://www.example.com/animated1.gif" alt="Animated GIF 1">
+                <img src="https://www.example.com/animated2.gif" alt="Animated GIF 2">
+                <img src="https://www.example.com/animated3.gif" alt="Animated GIF 3">
+                <br><br>
+                <img src="https://www.example.com/visitor_counter.gif" alt="Visitor Counter">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <marquee behavior="scroll" direction="left"><font color="#FF0000">This is a scrolling text marquee, a classic Web 1.0 element!</font></marquee>
+                <p><font color="#FFFFFF">Hello, this is a simple webpage that represents the style of the early days of the internet. Back then, websites were static and simple.</font></p>
+                <h2><font color="#00FF00">About Me</font></h2>
+                <p><font color="#FFFFFF">My name is Martin P, and I am a web enthusiast XD.</font></p>
+                <h2><font color="#00FF00">Links</font></h2>
+                <ul>
+                    <li><a href="https://example.com">Example Link 1</a></li>
+                    <li><a href="https://example.com">Example Link 2</a></li>
+                    <li><a href="https://example.com">Example Link 3</a></li>
+                </ul>
+                <h2><font color="#00FF00">Contact</font></h2>
+                <p><font color="#FFFFFF">You can contact me at: <a href="mailto:john.doe@example.com">john.doe@example.com</a></font></p>
+                <h2><font color="#00FF00">Guestbook</font></h2>
+                <p><font color="#FFFFFF">Please sign my <a href="https://example.com/guestbook">guestbook</a>!</font></p>
+                <hr>
+                <center>
+                    <img src="https://www.example.com/under_construction.gif" alt="Under Construction">
+                    <img src="https://www.example.com/animated4.gif" alt="Animated GIF 4">
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <b><font color="#FF0000">Thanks for visiting!</font></b>
+                <br>
+                <img src="https://www.example.com/blinking_text.gif" alt="Blinking Text">
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+        // Access the audio element
+        var audio = document.getElementById('background-music');
+
+        // Play the audio when the page loads
+        window.onload = function() {
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+                // You might want to inform the user or provide a manual play option
+            });
+        };
+
+        // Optional: Function to handle when audio ends
+        audio.addEventListener('ended', function() {
+            audio.currentTime = 0; // Reset to the beginning if you want it to loop
+            audio.play(); // Play again if needed
+        });
+    </script>
+</body>
+</html>
