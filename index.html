@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web 1.0 Style Website</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        a {
+            color: #00FF00;
+        }
+
+        a:visited {
+            color: #00FF00;
+        }
+
+        /* Blinking text animation */
+        .blinking {
+            animation: blinking 1s infinite;
+        }
+
+        @keyframes blinking {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body bgcolor="#000000" text="#FFFFFF" link="#00FF00" vlink="#00FF00" alink="#FF0000">
-    <!-- Audio Element -->
+    <!-- Background Music -->
     <audio id="background-music" autoplay loop>
         <source src="audio/INTERSLAVIC SLAVBASS - MEDŽUSLOVJANSKY SLAVBASS - МЕДЖУСЛОВЈАНСКЫ СЛАВБАСС.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <hr>
+
+                <!-- Under Construction GIF -->
+                <center>
+                    <img src="https://media0.giphy.com/media/cfGmVRsJI6wq6noGxP/giphy.gif">
+                    <h1>Under Construction</h1>
+                </center>
+            </td>
+        </tr>
+    <!-- Main Table -->
     <table border="1" width="800" align="center" cellpadding="10" bgcolor="#333333">
         <tr>
             <td>
@@ -17,45 +55,54 @@
         </tr>
         <tr>
             <td align="center">
-                <img src="https://www.example.com/animated1.gif" alt="Animated GIF 1">
-                <img src="https://www.example.com/animated2.gif" alt="Animated GIF 2">
-                <img src="https://www.example.com/animated3.gif" alt="Animated GIF 3">
+                <img src="https://i.pinimg.com/originals/56/c1/73/56c1730382150bc03083d5e84fda7767.gif" alt="Animated GIF 1">
+                <img src="https://media.giphy.com/media/SgpA1i5Ox1rs8nUwxc/giphy.gif?cid=ecf05e47jwct3n4h0yoeood9n1tdgye374t3x7ar9nd05pzs&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Animated GIF 2">
+                <img src="https://media.tenor.com/jWTOcH5trbIAAAAC/meow-im-dancing.gif" alt="Animated GIF 3">
                 <br><br>
-                <img src="https://www.example.com/visitor_counter.gif" alt="Visitor Counter">
             </td>
         </tr>
         <tr>
             <td>
-                <marquee behavior="scroll" direction="left"><font color="#FF0000">This is a scrolling text marquee, a classic Web 1.0 element!</font></marquee>
+                <!-- Scrolling Marquee with Visitor Counter -->
+                <marquee behavior="scroll" direction="left" id="visitor-counter-marquee">
+                    <font color="#FF0000">Visitor Count: 0</font>
+                </marquee>
+
                 <p><font color="#FFFFFF">Hello, this is a simple webpage that represents the style of the early days of the internet. Back then, websites were static and simple.</font></p>
+
                 <h2><font color="#00FF00">About Me</font></h2>
                 <p><font color="#FFFFFF">My name is Martin P, and I am a web enthusiast XD.</font></p>
+
                 <h2><font color="#00FF00">Links</font></h2>
                 <ul>
-                    <li><a href="https://example.com">Example Link 1</a></li>
-                    <li><a href="https://example.com">Example Link 2</a></li>
-                    <li><a href="https://example.com">Example Link 3</a></li>
+                    <a href="https://spacehey.com/profile?id=2716157" target="_blank">Space Hey</a>
+                    <a href="https://www.youtube.com/@stuffbymax" target="_blank">youtube</a>
+                    <a href="https://github.com/stuffbymax" target="_blank">github</a>
                 </ul>
+
                 <h2><font color="#00FF00">Contact</font></h2>
-                <p><font color="#FFFFFF">You can contact me at: <a href="mailto:john.doe@example.com">john.doe@example.com</a></font></p>
+                <p><font color="#FFFFFF">You can contact me at: <a href="martinp6282@gmail.com">martinp6282@gmail.com</a></font></p>
+
                 <h2><font color="#00FF00">Guestbook</font></h2>
                 <p><font color="#FFFFFF">Please sign my <a href="https://example.com/guestbook">guestbook</a>!</font></p>
+                
                 <hr>
+
+                <!-- Under Construction GIF -->
                 <center>
-                    <img src="https://www.example.com/under_construction.gif" alt="Under Construction">
-                    <img src="https://www.example.com/animated4.gif" alt="Animated GIF 4">
+                    <img src="https://media0.giphy.com/media/cfGmVRsJI6wq6noGxP/giphy.gif">
+                    <h1>Under Construction</h1>
                 </center>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <b><font color="#FF0000">Thanks for visiting!</font></b>
+                <b class="blinking"><font color="#FF0000">Thanks for visiting!</font></b>
                 <br>
-                <img src="https://www.example.com/blinking_text.gif" alt="Blinking Text">
             </td>
         </tr>
     </table>
-    
+
     <script>
         // Access the audio element
         var audio = document.getElementById('background-music');
@@ -64,8 +111,8 @@
         window.onload = function() {
             audio.play().catch(error => {
                 console.log('Error playing audio:', error);
-                // You might want to inform the user or provide a manual play option
             });
+            updateVisitorCount(); // Call function to update visitor count
         };
 
         // Optional: Function to handle when audio ends
@@ -73,6 +120,15 @@
             audio.currentTime = 0; // Reset to the beginning if you want it to loop
             audio.play(); // Play again if needed
         });
+
+        // Function to update visitor count
+        function updateVisitorCount() {
+            // Get visitor count from local storage or initialize to 0
+            let count = localStorage.getItem('visitorCount') || 0;
+            count++;
+            localStorage.setItem('visitorCount', count); // Update local storage
+            document.getElementById('visitor-counter-marquee').innerHTML = `<font color="#FF0000">Visitor Count: ${count}</font>`; // Update marquee text
+        }
     </script>
 </body>
 </html>
